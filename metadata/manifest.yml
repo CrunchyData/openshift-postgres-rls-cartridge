@@ -1,0 +1,25 @@
+Name: pg
+Cartridge-Short-Name: PG
+Display-Name: postgresql-crunchy-rls-94-devel
+Description: postgresql 9.4 devel as of 4-2102014 with RLS patch applied
+Version: "1.0"
+Website: http://www.crunchydatasolutions.com
+Cartridge-Version: 1.0.0
+Cartridge-Vendor: crunchydatasolutions
+Categories:
+  - service
+  - database
+  - embedded
+Provides:
+  - pg-1.0
+  - pg
+Scaling:
+  Min: 1
+  Max: -1
+Endpoints:
+  - Private-IP-Name:   HOST
+    Private-Port-Name: PORT
+    Private-Port:      5432
+    Public-Port-Name:  PORT
+
+Source-Url: ssh://github.com/crunchyds/openshift-postgres-rls-cartridge.git
