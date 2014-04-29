@@ -1,4 +1,4 @@
-Name: pg
+Name: pgrls
 Cartridge-Short-Name: PG
 Display-Name: postgresql-crunchy-rls-94-devel
 Description: postgresql 9.4 devel as of 4-2102014 with RLS patch applied
@@ -11,8 +11,8 @@ Categories:
   - database
   - embedded
 Provides:
-  - pg-1.0
-  - pg
+  - pgrls-1.0
+  - pgrls
 Scaling:
   Min: 1
   Max: -1
