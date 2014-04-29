@@ -1,5 +1,5 @@
 Name: pgrls
-Cartridge-Short-Name: PG
+Cartridge-Short-Name: PGRLS
 Display-Name: postgresql-crunchy-rls-94-devel
 Description: postgresql 9.4 devel as of 4-2102014 with RLS patch applied
 Version: "1.0"
