@@ -12,7 +12,7 @@ rm -rf $OPENSHIFT_PGRLS_DIR/versions/$version/
 
 mkdir $OPENSHIFT_PGRLS_DIR/versions/$version
 
-mkdir -p $OPENSHIFT_DATA_DIR/.pg/data
+mkdir -p $OPENSHIFT_PGRLS_DIR/data
 
 tar xzf $OPENSHIFT_PGRLS_DIR/versions/$version-crunchy.tar.gz --directory=$OPENSHIFT_PGRLS_DIR/versions/$version
 
