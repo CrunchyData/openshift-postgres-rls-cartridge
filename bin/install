@@ -7,11 +7,11 @@ source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
 echo "running initdb....`date`"
 
-$OPENSHIFT_PGRLS_PATH_ELEMENT/initdb -D $OPENSHIFT_DATA_DIR/.pg/data
+$OPENSHIFT_PGRLS_PATH_ELEMENT/initdb -D $OPENSHIFT_PGRLS_DIR/data
 
 client_result "completed running initdb ....`date`"
 
 client_result "configuring standalone postgres server this time"
-erb  $OPENSHIFT_PGRLS_DIR/conf/pg_hba.conf.erb > $OPENSHIFT_DATA_DIR/.pg/data/pg_hba.conf
-erb  $OPENSHIFT_PGRLS_DIR/conf/postgresql.conf.erb > $OPENSHIFT_DATA_DIR/.pg/data/postgresql.conf
+erb  $OPENSHIFT_PGRLS_DIR/conf/pg_hba.conf.erb > $OPENSHIFT_PGRLS_DIR/data/pg_hba.conf
+erb  $OPENSHIFT_PGRLS_DIR/conf/postgresql.conf.erb > $OPENSHIFT_PGRLS_DIR/data/postgresql.conf
 
