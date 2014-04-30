@@ -8,23 +8,23 @@ for dir in logs pid tmp env; do
 	mkdir -p $dir
 done
 
-rm -rf $OPENSHIFT_PG_DIR/versions/$version/
+rm -rf $OPENSHIFT_PGRLS_DIR/versions/$version/
 
-mkdir $OPENSHIFT_PG_DIR/versions/$version
+mkdir $OPENSHIFT_PGRLS_DIR/versions/$version
 
 mkdir -p $OPENSHIFT_DATA_DIR/.pg/data
 
-tar xzf $OPENSHIFT_PG_DIR/versions/$version-crunchy.tar.gz --directory=$OPENSHIFT_PG_DIR/versions/$version
+tar xzf $OPENSHIFT_PGRLS_DIR/versions/$version-crunchy.tar.gz --directory=$OPENSHIFT_PGRLS_DIR/versions/$version
 
-rm  $OPENSHIFT_PG_DIR/versions/pg
+rm  $OPENSHIFT_PGRLS_DIR/versions/pg
 
-ln -s $OPENSHIFT_PG_DIR/versions/$version $OPENSHIFT_PG_DIR/versions/pg 
+ln -s $OPENSHIFT_PGRLS_DIR/versions/$version $OPENSHIFT_PGRLS_DIR/versions/pg 
 
-echo "5432" > env/PG_PORT
-echo "15000" > env/PG_TUNNEL_PORT
-echo $OPENSHIFT_PG_DIR/versions/pg/bin > env/OPENSHIFT_PG_PATH_ELEMENT
-echo $OPENSHIFT_PG_DIR/versions/pg/lib > env/LD_LIBRARY_PATH
-echo $OPENSHIFT_PG_HOST > env/STATHOST
+echo "5432" > env/PGRLS_PORT
+echo "15000" > env/PGRLS_TUNNEL_PORT
+echo $OPENSHIFT_PGRLS_DIR/versions/pg/bin > env/OPENSHIFT_PGRLS_PATH_ELEMENT
+echo $OPENSHIFT_PGRLS_DIR/versions/pg/lib > env/LD_LIBRARY_PATH
+echo $OPENSHIFT_PGRLS_HOST > env/STATHOST
 
 if [ -n "$PG_NODE_TYPE" ]; then
 		client_result "$PG_NODE_TYPE is being setup"

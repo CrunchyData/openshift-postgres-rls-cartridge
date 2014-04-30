@@ -9,9 +9,9 @@ source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
 client_result "performing pg upgrade...." $1
 
-mv $OPENSHIFT_PG_DIR/versions/pg $OPENSHIFT_PG_DIR/versions/pg-before-upgrade
+mv $OPENSHIFT_PGRLS_DIR/versions/pg $OPENSHIFT_PGRLS_DIR/versions/pg-before-upgrade
 
-mkdir $OPENSHIFT_PG_DIR/versions/pg
+mkdir $OPENSHIFT_PGRLS_DIR/versions/pg
 
-tar xvzf $OPENSHIFT_HOMEDIR/$1 --directory=$OPENSHIFT_PG_DIR/versions/pg
+tar xvzf $OPENSHIFT_HOMEDIR/$1 --directory=$OPENSHIFT_PGRLS_DIR/versions/pg
 

@@ -7,7 +7,7 @@ function status() {
 	ps -C postgres > /dev/null
     if [ "$?" -eq "0" ];
 	then client_result "$version is running"; 
-		client_result "  Connect to $version using:  psql -U $OPENSHIFT_GEAR_UUID -h 127.0.0.1 -p $PG_PORT template1";
+		client_result "  Connect to $version using:  psql -U $OPENSHIFT_GEAR_UUID -h 127.0.0.1 -p $PGRLS_PORT template1";
 	else client_result "$version is not running"; 
     fi
 
@@ -45,7 +45,7 @@ function update() {
 function start() {
 # start the tunnels if this is a master or standby configuration of postgres
 	if [ -n "$PG_NODE_TYPE" ]; then
-		$OPENSHIFT_PG_DIR/bin/create-tunnel.sh	
+		$OPENSHIFT_PGRLS_DIR/bin/create-tunnel.sh	
 	fi
 
 	client_result "starting postgres...."	
@@ -59,7 +59,7 @@ function start() {
 	if [ "$PG_NODE_TYPE" == "master" ]; then
 		client_result "this is a master...we are granting replication to user";
 		sleep 10
-		$OPENSHIFT_PG_DIR/bin/grant.sh;
+		$OPENSHIFT_PGRLS_DIR/bin/grant.sh;
 	fi
 
 }
@@ -67,7 +67,7 @@ function start() {
 
 function stop() {
 	if [ -n "$PG_NODE_TYPE" ]; then
-		$OPENSHIFT_PG_DIR/bin/stop-tunnel.sh	
+		$OPENSHIFT_PGRLS_DIR/bin/stop-tunnel.sh	
 	fi
 	client_result "stopping postgres...."	
 	ps -C postgres > /dev/null
