@@ -19,8 +19,8 @@
 #------------------------------------------------------------------------------
 # CONNECTIONS AND AUTHENTICATION
 #------------------------------------------------------------------------------
-listen_addresses = '<%= ENV['OPENSHIFT_PG_HOST'] %>'
-port = <%= ENV['PG_PORT'] %>
+listen_addresses = '<%= ENV['OPENSHIFT_PGRLS_HOST'] %>'
+port = <%= ENV['PGRLS_PORT'] %>
 max_connections = 100
 #unix_socket_directories  = '<%= ENV['OPENSHIFT_POSTGRESQL_DB_SOCKET'] %>'
 #unix_socket_permissions = 0700
