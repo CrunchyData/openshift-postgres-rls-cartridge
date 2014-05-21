@@ -23,7 +23,10 @@ ln -s $OPENSHIFT_PGRLS_DIR/versions/$version $OPENSHIFT_PGRLS_DIR/versions/pg
 echo "5432" > env/PGRLS_PORT
 echo "15000" > env/PGRLS_TUNNEL_PORT
 echo $OPENSHIFT_PGRLS_DIR/versions/pg/bin > env/OPENSHIFT_PGRLS_PATH_ELEMENT
+# next line is for ose 2.0
 echo $OPENSHIFT_PGRLS_DIR/versions/pg/lib > env/LD_LIBRARY_PATH
+# next line is for ose 2.1
+echo $OPENSHIFT_PGRLS_DIR/versions/pg/lib > env/OPENSHIFT_PGRLS_LD_LIBRARY_PATH_ELEMENT
 echo $OPENSHIFT_PGRLS_HOST > env/STATHOST
 
 if [ -n "$PG_NODE_TYPE" ]; then
