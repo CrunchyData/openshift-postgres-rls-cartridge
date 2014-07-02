@@ -2,7 +2,7 @@
 
 Summary:       Provides Crunchy Postgres 94devel rls support
 Name:          openshift-postgres-94-devel-rls-rh65-cart
-Version:       0.0.6
+Version:       0.0.7
 Release:       1%{?dist}
 Group:         Development/Languages
 License:       ASL 2.0
@@ -41,6 +41,9 @@ Provides postgres 94 devel rls support to OpenShift. (Cartridge Format V2)
 %doc %{cartridgedir}/LICENSE
 
 %changelog
+* Wed Jul 02 2014 jeff mccormick <jeffmc04@gmail.com> 0.0.7-1
+- new package built with tito
+
 * Tue Mar 18 2014 Unknown name 0.0.6-1
 - fix (jeffmc@localhost.localdomain)
 
